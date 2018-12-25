@@ -1,0 +1,12 @@
+下载 解压
+
+第四步：配置tomcat server.xml
+server.xml可以配置端口，编码以及配置项目等等，我们这里就配置一个端口，把默认的8080，修改成80
+
+
+第五步：配置防火墙，开放80端口
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --reload
+
+启动时应该注意
+由于没有加到路径 所以 应该运行/javatools/tomcat/bin/startup.sh
