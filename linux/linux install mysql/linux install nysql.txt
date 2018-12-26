@@ -1,0 +1,86 @@
+Mysql目录安装位置：/usr/local/mysql
+数据库保存位置：/data/mysql
+日志保存位置：/data/log/mysql
+
+--解压压缩包
+#tar -xzvf 要解压的mysql包
+
+--移动并重命名文件夹
+#mv 要解压的mysql包 /usr/local/mysql
+
+--/data/mysql 数据仓库目录
+# mkdir /data/mysql
+
+5新建mysql用户、组及目录
+# groupadd mysql    ---新建一个msyql组
+# useradd -r -s /sbin/nologin -g mysql mysql -d /usr/local/mysql     ---新建msyql用户
+
+6改变目录属有者
+
+#cd /usr/local/mysql
+#chown -R mysql .
+#chgrp -R mysql .
+#chown -R mysql /data/mysql
+
+7配置参数
+# bin/mysqld --initialize --user=mysql --basedir=/usr/local/mysql --datadir=/data/mysql
+此时会生成密码要记住
+
+此时会有异常
+出现该问题首先检查该链接库文件有没有安装使用命令进行核查
+rpm -qa|grep libaio   
+运行该命令后发现系统中无该链接库文件
+使用命令，yum install  libaio-devel.x86_64
+安装成功后，继续运行数据库的初始化命令即可。
+
+8修改系统配置文件
+#cd /usr/local/mysql/support-files
+# cp mysql.server /etc/init.d/mysql
+# vi /etc/init.d/mysql
+basedir=/usr/local/mysql
+datadir=/data/mysql
+
+9启动mysql
+# /etc/init.d/mysql start
+--登陆
+# mysql -hlocalhost -uroot -p
+　　--如果出现：-bash: mysql: command not found
+　　--就执行： # ln -s /usr/local/mysql/bin/mysql /usr/bin --没有出现就不用执行
+--输入第6步生成的临时密码
+
+--修改密码
+mysql> set password=password('123456');
+--设置root账户的host地址（修改了才可以远程连接）
+
+mysql>grant all privileges on *.* to 'root'@'%' identified by 'root';
+mysql>flush privileges;
+
+--查看表
+mysql> use mysql;
+mysql> select host,user from user;
+
+显示如下，表示已经可以远程连接。
+% root
+
+--   防火墙放行3306端口
+firewall-cmd --zone=public --add-port=3306/tcp --permanent
+service firewalld restart
+
+10添加系统路径
+# vim /etc/profile
+添加：
+export PATH=/usr/local/mysql/bin:$PATH
+# source /etc/profile
+
+11配置mysql自动启动
+# chmod 755 /etc/init.d/mysql
+# chkconfig --add mysql
+# chkconfig --level 345 mysql on
+
+出现Couldn't find MySQL server (/usr/local/mysql/bin/mysqld_safe)
+
+如果出现问题 可以尝试
+修改 /usr/local/mysql/bin/mysqld_safe的权限
+或者 cp /support-file/my-default.cnf /etc/my.cnf
+
+

@@ -1,0 +1,21 @@
+java -version 检查当前系统自带的jdk
+rpm -qa | grep java 查询当前安装的jdk
+rpm -e --nodeps 需要卸载的java软件名字 java-1.8.0-openjdk-1.8.0.1612.b14.el7.x86_64 java-1.8.0-openjdk-headless-1.8.0.161-2.b14.el7.x86_64 如果已经安装了就卸载
+
+rm -rf 需要删除的软件或者目录 java-1.8.0-openjdk-1.8.0.1612.b14.el7.x86_64 java-1.8.0-openjdk-headless-1.8.0.161-2.b14.el7.x86_64 没有安装但是还有相应的jdk目录 就直接删除它
+
+mkdir /usr/local/src/java 创建一个新的目录
+tar -zxvf jdk-10.0.2_linux-x64_bin.tar.gz 解压传过来的jdk
+mv java_1.10.0.2 /usr/local/src/java/jdk10 将解压好的jdk移动到这个目录中
+
+vim /etc/profile 配置环境变量
+i 在最后写入 jdk需要配置的环境变量
+#java environment
+export JAVA_HOME=/usr/local/src/java/jdk10
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin
+
+esc shift+: wq 退出并保存
+source /etc/profile 重新加载环境变量
+java 检查
+java -version 检查版本
