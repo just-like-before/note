@@ -1,0 +1,10 @@
+<textarea name="${modelItem.field }" id="id${modelItem.id }"  style="width: 100%;height: 30px;">${result }</textarea>
+<script type="text/javascript">
+KindEditor.ready(function(K){
+window.editor = K.create('#id${modelItem.id}',{ //必须与textarea的id一致
+uploadJson : 'admin/upload', //文件提交路径
+allowFileManager : false,
+fileManagerJson : '../jsp/file_manager_json.jsp'
+});
+});
+</script>

@@ -1,0 +1,54 @@
+<c:when test="${modelItem.data_type==6 }">
+	<div id="pics_${modelItem.field }">${modelItem.field_dis}</div>
+		<ul id="shows_${modelItem.field }">
+			<c:if test="${mis.field=='pics1'}">
+				<c:forEach items="${picture1}" var="pics">
+					 <li>
+					<img src="${pics.path}" width="30" height="30"/>
+					 <input type='hidden' name='pics1_ids' value='${pics.id}'/>
+					<select name='pics1_priority'>
+					 <%
+						for(int i=10;i>0;i--)
+						 {
+							request.setAttribute("temii", i);
+					 %>
+					<option value="<%=i%>"  ${pics.priority==temii?"selected=\"selected\"":""}><%=i%></option>
+					<%
+						 }
+					 %>
+					</select>
+					<input type='text' name='pics1_dis' placeholder='图片描述'  value="${pics.picdis}"/>
+										              
+					 </li>
+				 </c:forEach>
+			</c:if> 
+	<script type="text/javascript">
+		$(function() {										
+			// 初始化Web Uploader
+			var uploader${modelItem.field } = WebUploader.create({
+			// 选完文件后，是否自动上传。
+			auto: true,
+			// swf文件路径
+			swf: 'js/plugins/webuploader/Uploader.swf',
+			// 文件接收服务端。
+			server: 'admin/uploadpic',
+			// 选择文件的按钮。可选。
+			// 内部根据当前运行是创建，可能是input元素，也可能是flash.
+			pick:  '#pics_${modelItem.field }',
+			// 只允许选择图片文件。
+			 accept: {
+			title: 'Images',
+			extensions: 'gif,jpg,jpeg,bmp,png',
+			mimeTypes: 'image/*'
+			 }
+			});
+													
+			uploader${modelItem.field}.on( 'uploadSuccess', function( file,response ) {
+		$("#shows_${modelItem.field}").append("<li><img src='"+response.url+"' width='30' height='30'/><input type='hidden' name='${modelItem.field}_ids' value='"+response.upid+"'/><select name='${modelItem.field}_priority'><c:forEach begin='1' end='10' var='proid'><option value='${proid}'>${proid}</option></c:forEach></select><input type='text' name='${modelItem.field}_dis' placeholder='图片描述' /></li>");
+			});
+
+		uploader${modelItem.field}.on( 'uploadError', function( file ) {
+			$("#shows_${modelItem.field}").appendt('上传出错');
+			});
+					});
+		</script> 

@@ -1,0 +1,20 @@
+<servlet>
+	<servlet-name>DruidStatView</servlet-name>
+	<servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+	<init-param>
+	<!-- 用户名 -->
+	 <param-name>loginUsername</param-name>
+	<param-value>root</param-value>
+	</init-param>
+	 <init-param>
+	 <!-- 密码 -->
+	 <param-name>loginPassword</param-name>
+	 <param-value>root</param-value>
+	 </init-param>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>DruidStatView</servlet-name>
+	  <url-pattern>/admin/druid/*</url-pattern>
+  </servlet-mapping>
+
+其中在HTML页面访问 admin/druid/index
