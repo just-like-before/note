@@ -1,0 +1,10 @@
+对于很多的不给用户呈现的参数可以使用 hidden 来进行提交
+相对路径 前边不加/ 则是以当前目录进行寻找
+
+<select name="upur" class="form-control">
+<option value="100000" ${admin.upur.startsWith("100")?"selected='selected'":"" }>管理员</option>
+<option value="010000" ${admin.upur.startsWith("010")?"selected='selected'":"" }>普通管理员</option>
+<option value="001000" ${admin.upur.startsWith("001")?"selected='selected'":"" }>一般</option>
+</select>
+
+jquery得到一个字符串在$ 里面可以使用字符串的比较方法
