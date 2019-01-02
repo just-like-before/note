@@ -1,0 +1,3 @@
+<base href="<%=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/"%>"/>
+
+设置一个相对的基本路径 是WEB-INF下的jsp文件不用加../来访问插件
