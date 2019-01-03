@@ -1,0 +1,5 @@
+<input  class="form-control layer-date" 
+name="${modelItem.field}" 
+value="${result }" 
+placeholder="YYYY-MM-DD hh:mm:ss" 
+onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
