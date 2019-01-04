@@ -1,0 +1,5 @@
+上传是服务器端 采用
+savePath = this.getServletContext().getRealPath("/") + "ups/";
+以工程的给为路径 /web1/ups/
+
+显示 由于加了"/" 表示在工程下寻找
