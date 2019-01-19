@@ -1,0 +1,262 @@
+1:创建maven项目
+2:pom.xml文件中导入相应的依赖
+<dependencies>
+  <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.11</version>
+    <scope>test</scope>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+  <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.1.0</version>
+    <scope>provided</scope>
+  </dependency>
+
+  <!--&lt;!&ndash; https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl &ndash;&gt;-->
+  <!--<dependency>-->
+    <!--<groupId>javax.servlet.jsp.jstl</groupId>-->
+    <!--<artifactId>jstl</artifactId>-->
+    <!--<version>1.2</version>-->
+  <!--</dependency>-->
+
+  <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api -->
+  <dependency>
+    <groupId>javax.servlet.jsp.jstl</groupId>
+    <artifactId>jstl-api</artifactId>
+    <version>1.2</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
+  <dependency>
+    <groupId>org.apache.taglibs</groupId>
+    <artifactId>taglibs-standard-impl</artifactId>
+    <version>1.2.1</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-beans</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-expression -->
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-expression</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aop</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aspects</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-tx</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-web</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-messaging</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jms</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>com.springsource.org.apache.commons.logging</artifactId>
+    <version>1.1.1</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context-support</artifactId>
+    <version>4.2.4.RELEASE</version>
+  </dependency>
+
+  <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.39</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+  <dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis</artifactId>
+    <version>3.4.6</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+  <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.1.10</version>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+  <dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis-spring</artifactId>
+    <version>1.3.1</version>
+  </dependency>
+
+
+  <dependency>
+    <groupId>net.sf.ehcache</groupId>
+    <artifactId>ehcache-core</artifactId>
+    <version>2.4.8</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.25</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-log4j12</artifactId>
+    <version>1.7.25</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.mybatis.generator</groupId>
+    <artifactId>mybatis-generator-core</artifactId>
+    <version>1.3.2</version>
+  </dependency>
+</dependencies>
+
+3:配置web.xml文件
+a.配置一个拦截器，所有已*.action结尾的url都会被拦截，然后将类交给
+org.springframework.web.servlet.DispatcherServlet
+进行处理 
+<servlet>
+  <servlet-name>web2</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  <init-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:springmvc/springmvc.xml</param-value>
+  </init-param>
+</servlet>
+<servlet-mapping>
+  <servlet-name>web2</servlet-name>
+  <url-pattern>*.action</url-pattern>
+</servlet-mapping>
+这是也要进行springmvc.xml文件的配置
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="com.web1.servlet.controller"></context:component-scan>
+
+    <mvc:annotation-driven></mvc:annotation-driven>
+</beans>
+第一个标签表示要进行controller包的扫描
+第二个便签开启注释配置 还要进行处理乱码等相关过滤器的配置
+b.要进行整合所以要进行spring容器的配置 先配置spring容器 然后配置一个监听器
+<context-param>
+  <param-name>contextConfigLocation</param-name>
+  <param-value>classpath:applicationContext.xml</param-value>
+</context-param>
+
+<listener>
+  <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+Spring容器要配置数据库的数据源 事务等相关配置
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <bean name="driverManagerDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/mweb1?useSSL=true"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="123456"></property>
+    </bean>
+
+    <bean name="sessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="driverManagerDataSource"></property>
+        <property name="mapperLocations" value="classpath*:com/web1/mapper/*.xml"></property>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.web1.mapper"></property>
+        <property name="sqlSessionFactoryBeanName" value="sessionFactoryBean"></property>
+    </bean
+   
+</beans>
+3.mybatis配置文件
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web1.mapper.UserMapper">
+
+    <insert id="add">
+  insert into user(name,age,addr)
+  values("zhangsan",33,"jjkjkj");
+  </insert>
+</mapper>
+
