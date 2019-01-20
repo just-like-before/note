@@ -1,0 +1,34 @@
+1.异常处理器
+1.自定义一个异常处理器 实现一个接口 将dao service 层的异常都
+抛入controller层
+2.将自定义的异常处理器注入spring容器 当有异常发生时程序就会走入这个异常处理器
+3.这里的异常有两大类 其中有未知的异常和已知的异常
+对于未知的异常直接进行处理 但是已知的异常就自定义一个异常处类
+4.然后在自定义的异常处理器中进行相应的判断 使用方法中的Exception判断是否是已知的异常
+
+二.图片上传
+1.在spring容器注入 CommonsMultipartResolver 这个类 id=multipartResolver 不可改变
+2.在上传到的方法上 写入MultipartFile 接口的形参 名字如jsp页面的名字一致 form类型上加入enctype="multipart/form-data"
+
+三.json传出数据 使用ajax
+1.json字符串 '{k，v}’
+$(function(){
+	$.post();
+	$.ajax({
+		url: "",
+		contentType: "applicatin/json;chartset=UTF-8",
+		data:params,
+		dataType:"json",
+		success:function(data){
+
+		}
+	}
+}
+2.在方法的形参上加上@RequestBody 表示传入
+在返回值的类型上加上@ResponseBody 表示返回json字符串
+
+四.拦截器
+1.在springmvc容器中加入
+<mvc:interceptors></mvc:interceptors>
+2.写一个自定义的拦截器实现HandlerInterceptor接口
+
