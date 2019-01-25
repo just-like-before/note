@@ -1,0 +1,3 @@
+  今天整合ssm框架，其中mybatis是用mybatis-plus插件，generator自动代码生成器。
+还有github中的一个开源的项目PageHelp，来进行分页。
+  在代码生成器中，增加一个商品时如果想返回增加的商品的自增id。则可以在<insert>中加入keyProperty="id" keyColumn="ID" useGeneratedKeys="true" 。这时就可以将自增的id返回到pojo的id属性中。
