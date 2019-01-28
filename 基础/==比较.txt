@@ -1,0 +1,12 @@
+Integer i1 = 59;
+int i2 = 59;
+Integer i3 = Integer.valueOf(59);
+Integer i4 = new Integer(59);
+
+当包装类的值 -128 <= n <=127 会放在常量池
+其中 Integer.valueOf(59) 中也有判断 如果这个值在放入常量池的范围
+会返回IntegerCache类中一个静态数组中的某个对象，否则返回Integer的新对象
+i1==i2 true 值比较
+i1==i3 true 都是常量池的引用 
+i3==i4	false i3是常量池的应用 i4是一个新对象 新对象应用常量池
+i2==i4	true 值比较
